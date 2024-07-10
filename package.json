@@ -1,0 +1,15 @@
+{
+  "name": "backend-softtek",
+  "version": "1.0.0",
+  "description": "backend softtek",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/app.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts"
+  },
+  "author": "jose zambrano",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  }
+}
