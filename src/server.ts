@@ -3,6 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import { routes } from "./routes";
+import { errorMiddleware } from "./middlewares/error.handler";
 
 export const configureApp = (prefix: string) => {
   const app = express();
@@ -12,6 +13,7 @@ export const configureApp = (prefix: string) => {
   app.use(helmet());
 
   app.use(prefix, routes());
+  app.use(errorMiddleware);
 
   return app;
 };

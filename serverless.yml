@@ -1,0 +1,33 @@
+service: BackendSofttek
+frameworkVersion: "3"
+
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: dev
+  region: us-east-1
+  memorySize: 2048
+  environment:
+    PORT: 4000
+    DATABASE_URL: ${env:DB_MYSQL}
+    SW_URL_API: ${env:SW_URL_API}
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
+
+custom:
+  serverless-offline:
+    httpPort: 4000
+
+functions:
+  api:
+    handler: dist/serverless.startApp
+    events:
+      - http: ANY /{proxy+}
+      - http: ANY /
+      - http:
+          path: /api/user
+          method: ANY
