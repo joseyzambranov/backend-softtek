@@ -31,3 +31,6 @@ functions:
       - http:
           path: /api/user
           method: ANY
+      - http:
+          path: /api/swapi
+          method: ANY    

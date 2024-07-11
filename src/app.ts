@@ -5,5 +5,5 @@ const port = process.env.PORT || 4000;
 const app = configureApp("/dev/api");
 
 app.listen(port, () => {
-  console.log("Hello world");
+  console.log(`Server is running on port ${port}`);
 });
