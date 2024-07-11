@@ -3,6 +3,11 @@ info:
   title: API de BackendSofttek
   version: 1.0.0
   description: Documentación de la API BackendSofttek
+servers:
+  - url: https://lti31t82qh.execute-api.us-east-1.amazonaws.com/
+    description: Staging server
+  - url: http://localhost:4000
+    description: Local server  
 paths:
   /dev/api/user:
     get:
@@ -19,7 +24,7 @@ paths:
                   ok:
                     type: boolean
                   error:
-                    type: null
+                    type: string
                   data:
                     type: array
                     items:
@@ -60,7 +65,7 @@ paths:
                   ok:
                     type: boolean
                   error:
-                    type: null
+                    type: string
                   data:
                     type: string
   /dev/api/swapi:
@@ -78,7 +83,7 @@ paths:
                   ok:
                     type: boolean
                   error:
-                    type: null
+                    type: string
                   data:
                     type: array
                     items:

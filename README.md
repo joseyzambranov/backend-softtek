@@ -12,7 +12,7 @@ Asegúrate de añadir un archivo .env con las variables de entorno basadas en el
 
 - `DB_MYSQL`: URL de conexión a la base de datos MySQL (el "pass" está adjunto en el correo de entrega del proyecto)
 
- - mysql://admin:pass@database-1.cb6eyk06mrqr.us-east-1.rds.amazonaws.com:3306/backend-softtek
+ - DB_MYSQL=mysql://admin:pass@database-1.cb6eyk06mrqr.us-east-1.rds.amazonaws.com:3306/backend-softtek
 
 - `SW_URL_API`: URL de la API de Star Wars
 
@@ -43,7 +43,7 @@ Asegúrate de tener instalados los siguientes elementos antes de ejecutar la apl
 
 3. **Configurar variables de entorno:**
 
-   Renombra el archivo .env-example a .env y añade la URL de tu base de datos MySQL.
+   Renombra el archivo .env-example a .env y añade la URL de tu base de datos MySQL o coloca la base de datos ya creada.
 
  **Ejecutar entorno de desarrollo:**
    ```bash
