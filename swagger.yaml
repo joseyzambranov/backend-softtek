@@ -1,0 +1,128 @@
+openapi: 3.0.0
+info:
+  title: API de BackendSofttek
+  version: 1.0.0
+  description: Documentación de la API BackendSofttek
+paths:
+  /dev/api/user:
+    get:
+      summary: Obtener todos los usuarios
+      description: Retorna la lista de todos los usuarios.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+                  error:
+                    type: null
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        status:
+                          type: integer
+                        created_at:
+                          type: string
+                          format: date-time
+                        updated_at:
+                          type: string
+                          format: date-time
+    post:
+      summary: Crear usuario
+      description: Crea un nuevo usuario.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        '200':
+          description: Usuario creado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+                  error:
+                    type: null
+                  data:
+                    type: string
+  /dev/api/swapi:
+    get:
+      summary: Obtener todos los personajes de SWAPI
+      description: Retorna la lista de todos los personajes disponibles en SWAPI.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+                  error:
+                    type: null
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        nombre:
+                          type: string
+                        altura:
+                          type: string
+                        masa:
+                          type: string
+                        color_del_cabello:
+                          type: string
+                        color_de_piel:
+                          type: string
+                        color_de_ojos:
+                          type: string
+                        año_de_nacimiento:
+                          type: string
+                        género:
+                          type: string
+                        planeta_natal:
+                          type: string
+                        películas:
+                          type: array
+                          items:
+                            type: string
+                        especies:
+                          type: array
+                          items:
+                            type: string
+                        vehículos:
+                          type: array
+                          items:
+                            type: string
+                        naves_estelares:
+                          type: array
+                          items:
+                            type: string
+                        creado:
+                          type: string
+                          format: date-time
+                        editado:
+                          type: string
+                          format: date-time
+                        url:
+                          type: string
